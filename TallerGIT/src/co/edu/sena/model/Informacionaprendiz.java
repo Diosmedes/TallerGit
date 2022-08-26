@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Informacionaprendiz.findByCedulaaprendiz", query = "SELECT i FROM Informacionaprendiz i WHERE i.cedulaaprendiz = :cedulaaprendiz")
     , @NamedQuery(name = "Informacionaprendiz.findByNombreaprendiz", query = "SELECT i FROM Informacionaprendiz i WHERE i.nombreaprendiz = :nombreaprendiz")
     , @NamedQuery(name = "Informacionaprendiz.findByFichaaprendiz", query = "SELECT i FROM Informacionaprendiz i WHERE i.fichaaprendiz = :fichaaprendiz")
-    , @NamedQuery(name = "Informacionaprendiz.findByNombreficha", query = "SELECT i FROM Informacionaprendiz i WHERE i.nombreficha = :nombreficha")
-    , @NamedQuery(name = "Informacionaprendiz.findByObservaciones", query = "SELECT i FROM Informacionaprendiz i WHERE i.observaciones = :observaciones")})
+    , @NamedQuery(name = "Informacionaprendiz.findByNombreficha", query = "SELECT i FROM Informacionaprendiz i WHERE i.nombreficha = :nombreficha")})
+//    , @NamedQuery(name = "Informacionaprendiz.findByObservaciones", query = "SELECT i FROM Informacionaprendiz i WHERE i.observaciones = :observaciones")})
 public class Informacionaprendiz implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cedulaaprendiz")
@@ -52,8 +52,8 @@ public class Informacionaprendiz implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombreficha")
     private String nombreficha;
-    @Column(name = "Observaciones")
-    private String observaciones;
+//    @Column(name = "Observaciones")
+//    private String observaciones;
 
     public Informacionaprendiz() {
     }
@@ -101,13 +101,13 @@ public class Informacionaprendiz implements Serializable {
         this.nombreficha = nombreficha;
     }
 
-    public String getObservaciones() {
-        return observaciones;
-    }
-
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
-    }
+//    public String getObservaciones() {
+//        return observaciones;
+//    }
+//
+//    public void setObservaciones(String observaciones) {
+//        this.observaciones = observaciones;
+//    }
 
     @Override
     public int hashCode() {

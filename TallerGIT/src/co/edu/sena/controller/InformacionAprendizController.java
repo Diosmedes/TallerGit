@@ -7,8 +7,9 @@ package co.edu.sena.controller;
 
 import co.edu.sena.model.Informacionaprendiz;
 
-import persistence.DAOFactory;
-import persistence.EntityManagerHelper;
+import co.edu.sena.persistence.DAOFactory;
+import co.edu.sena.persistence.EntityManagerHelper;
+import java.util.List;
 
 /**
  *
@@ -70,5 +71,9 @@ public class InformacionAprendizController {
         }
           
         return DAOFactory.getInformacionaprendizDAO().find(cedulaaprendiz);
+    }
+    public List<Informacionaprendiz> findAll() throws Exception
+    {
+        return DAOFactory.getInformacionaprendizDAO().findAll();
     }
 }

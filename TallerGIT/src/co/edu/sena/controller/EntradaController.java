@@ -7,8 +7,8 @@ package co.edu.sena.controller;
 
 import co.edu.sena.model.Entrada;
 import java.util.List;
-import persistence.DAOFactory;
-import persistence.EntityManagerHelper;
+import co.edu.sena.persistence.DAOFactory;
+import co.edu.sena.persistence.EntityManagerHelper;
 
 /**
  *
