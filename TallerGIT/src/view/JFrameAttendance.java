@@ -32,7 +32,6 @@ public class JFrameAttendance extends javax.swing.JFrame {
         jButtonSearch = new javax.swing.JButton();
         jButtonUpdate = new javax.swing.JButton();
         jButtonSave = new javax.swing.JButton();
-        jButtonCreate = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabelAttendence = new javax.swing.JLabel();
@@ -55,8 +54,6 @@ public class JFrameAttendance extends javax.swing.JFrame {
 
         jButtonSave.setText("Guardar");
 
-        jButtonCreate.setText("Crear");
-
         jTable2.setBackground(new java.awt.Color(0, 0, 0));
         jTable2.setForeground(new java.awt.Color(204, 204, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -78,18 +75,15 @@ public class JFrameAttendance extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jButtonCreate)
-                .addGap(58, 58, 58)
-                .addComponent(jButtonSave)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addComponent(jButtonUpdate)
-                .addGap(70, 70, 70)
-                .addComponent(jButtonSearch)
-                .addGap(52, 52, 52))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(93, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButtonSave)
+                        .addGap(68, 68, 68)
+                        .addComponent(jButtonUpdate)
+                        .addGap(81, 81, 81)
+                        .addComponent(jButtonSearch)
+                        .addGap(79, 79, 79))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabelAttendence)
                         .addGap(202, 202, 202))
@@ -108,8 +102,7 @@ public class JFrameAttendance extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSave)
                     .addComponent(jButtonUpdate)
-                    .addComponent(jButtonSearch)
-                    .addComponent(jButtonCreate))
+                    .addComponent(jButtonSearch))
                 .addContainerGap())
         );
 
@@ -170,7 +163,6 @@ public class JFrameAttendance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCreate;
     private javax.swing.JButton jButtonSave;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JButton jButtonUpdate;
