@@ -25,18 +25,30 @@ public class EntradaDAO implements IEntradaDAO {
     }
 
     @Override
+<<<<<<< HEAD
     public Entrada find(Integer id) throws Exception {
        try {
             return EntityManagerHelper.getEntityManager().find(Entrada.class,id);
+=======
+    public Entrada find(Integer numeroaprendiz) throws Exception {
+       try {
+            return EntityManagerHelper.getEntityManager().find(Entrada.class,numeroaprendiz);
+>>>>>>> d50f7060f1fd86cba80b67cfbe2495a31da1d4c1
         } catch (Exception e) {
             throw e;
         }
     }
 
     @Override
+<<<<<<< HEAD
     public List<Entrada> findAll() throws Exception {
         try {
             Query query=EntityManagerHelper.getEntityManager().createNamedQuery("Entrada.findAll");
+=======
+   public List<Entrada> findAll() throws Exception {
+        try {
+            Query query =EntityManagerHelper.getEntityManager().createNamedQuery("Entrada.findAll");
+>>>>>>> d50f7060f1fd86cba80b67cfbe2495a31da1d4c1
             return query.getResultList();
         } catch (Exception e) {
             throw e;
@@ -51,5 +63,4 @@ public class EntradaDAO implements IEntradaDAO {
             throw e;
         }
     }
-    
 }

@@ -12,13 +12,13 @@ import co.edu.sena.model.Informacionaprendiz;
  * @author Aprendiz
  */
 public class DAOFactory {
-    private static InformacionaprendizDAO informacionaprendizDAO = new InformacionaprendizDAO();
-    private static EntradaDAO entradaDAO = new EntradaDAO();
-    public static InformacionaprendizDAO getInformacionaprendizDAO() {
+    private static IInformacionaprendizDAO informacionaprendizDAO = new InformacionaprendizDAO();
+    private static IEntradaDAO entradaDAO = new EntradaDAO();
+    public static IInformacionaprendizDAO getInformacionaprendizDAO() {
         return informacionaprendizDAO;
     }
 
-    public static EntradaDAO getEntradaDAO() {
+    public static IEntradaDAO getEntradaDAO() {
         return entradaDAO;
     }
     

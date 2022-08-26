@@ -15,6 +15,6 @@ import java.util.List;
 public interface IEntradaDAO {
     public void insert(Entrada entrada) throws Exception;
     public void update(Entrada entrada) throws Exception;
-    public Entrada find(Integer entrada) throws Exception;
+    public Entrada find(Integer numeroaprendiz) throws Exception;
     public List<Entrada> findAll() throws Exception;
 }
