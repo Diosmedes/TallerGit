@@ -62,7 +62,7 @@ public class JFrameAttendance extends javax.swing.JFrame {
     }
     public void clear()
     {
-        jTextFieldID.setText("");
+        jComboBox1.setSelectedIndex(0);
         jTextFieldDate.setText("");
         jTextArea1.setText("");
        
@@ -95,7 +95,6 @@ public class JFrameAttendance extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jLabelAttendence = new javax.swing.JLabel();
         jLabelID = new javax.swing.JLabel();
-        jTextFieldID = new javax.swing.JTextField();
         jLabelDate = new javax.swing.JLabel();
         jTextFieldDate = new javax.swing.JTextField();
         jLabelObservation = new javax.swing.JLabel();
@@ -107,6 +106,7 @@ public class JFrameAttendance extends javax.swing.JFrame {
         jTextFieldNameAprentiencer = new javax.swing.JTextField();
         jTextFieldNameFile = new javax.swing.JTextField();
         jTextFieldNumberFile = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,8 +206,8 @@ public class JFrameAttendance extends javax.swing.JFrame {
                                 .addGap(38, 38, 38)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jLabelNameApretiencer))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,12 +230,13 @@ public class JFrameAttendance extends javax.swing.JFrame {
                 .addComponent(jLabelAttendence)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabelID))
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelID)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelNameApretiencer)
                             .addComponent(jLabelNameFile)
                             .addComponent(jLabelNumberFile, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -282,7 +283,7 @@ public class JFrameAttendance extends javax.swing.JFrame {
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         int rowSelected= jTable2.getSelectedRow();
-        jTextFieldID.setText(String.valueOf(jTable2.getValueAt(rowSelected, 0)));
+        jComboBox1.setSelectedIndex(String.valueOf(jTable2.getValueAt(rowSelected, 0)));
         jTextFieldNameAprentiencer.setText(String.valueOf(jTable2.getValueAt(rowSelected, 1)));
         jTextFieldNumberFile.setText(String.valueOf(jTable2.getValueAt(rowSelected, 2)));
         jTextFieldNameFile.setText(String.valueOf(jTable2.getValueAt(rowSelected, 3)));
@@ -290,7 +291,8 @@ public class JFrameAttendance extends javax.swing.JFrame {
         
         
         try {
-            Entrada entrada = entradacontroller.find(Integer.parseInt(jTextFieldID.getText()));
+            Entrada entrada = entradacontroller.find(rowSelected);
+            jComboBox1.setSelectedItem(informacionaprendizcontroller.getCedulaaprendiz());
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane,e.getMessage(),"ERROR",JOptionPane.ERROR_MESSAGE);
@@ -304,10 +306,14 @@ public class JFrameAttendance extends javax.swing.JFrame {
             Entrada entrada= new Entrada();
             System.out.println(" has entrado exitosamente");
             //entrada.setNombreaprendiz();
+           Informacionaprendiz info= (Informacionaprendiz)jComboBox1.getSelectedItem();
+            entrada.setCedulaaprendiz(info);
+            entrada.setNombreaprendiz(jTextFieldNameAprentiencer.getText());
+            entrada.setNombredeficha(jTextFieldNameFile.getText());
+            entrada.setNumeroaprendiz(Integer.parseInt(jTextFieldNumberFile.getText()));
             entrada.setFecha(parseFecha(jTextFieldDate.getText()));
             entrada.setObservacion(jTextArea1.getText());
             entradacontroller.insert(entrada);
-
             clear();
 
         } catch (Exception e) {
@@ -370,6 +376,7 @@ public class JFrameAttendance extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSave;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JButton jButtonUpdate;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabelAttendence;
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelID;
@@ -384,7 +391,6 @@ public class JFrameAttendance extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextFieldDate;
-    private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldNameAprentiencer;
     private javax.swing.JTextField jTextFieldNameFile;
     private javax.swing.JTextField jTextFieldNumberFile;

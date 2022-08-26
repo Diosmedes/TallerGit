@@ -94,8 +94,8 @@
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="jTextFieldID" min="-2" pref="109" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jComboBox1" min="-2" pref="73" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jLabelNameApretiencer" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
@@ -129,13 +129,15 @@
                       <Component id="jLabelAttendence" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="jLabelID" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabelID" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextFieldID" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelNameApretiencer" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelNameFile" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelNumberFile" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
@@ -236,8 +238,6 @@
                 <Property name="text" type="java.lang.String" value="cedula"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldID">
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabelDate">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fecha"/>
@@ -285,6 +285,16 @@
             <Component class="javax.swing.JTextField" name="jTextFieldNameFile">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldNumberFile">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox1">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
