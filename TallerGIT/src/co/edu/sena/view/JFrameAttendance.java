@@ -267,9 +267,12 @@ public class JFrameAttendance extends javax.swing.JFrame {
         try {
             
         Entrada entrada= new Entrada();
+        System.out.println(" has entrado exitosamente");
+        //entrada.setNombreaprendiz();
         entrada.setFecha(parseFecha(jTextFieldDate.getText()));
         entrada.setObservacion(jTextArea1.getText());
         entradacontroller.insert(entrada);
+        
         clear();
                 
         } catch (Exception e) {
