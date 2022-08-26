@@ -6,6 +6,7 @@
 package co.edu.sena.controller;
 
 import co.edu.sena.model.Entrada;
+import java.util.List;
 import persistence.DAOFactory;
 import persistence.EntityManagerHelper;
 
@@ -58,5 +59,9 @@ public class EntradaController {
         }
           
         return DAOFactory.getEntradaDAO().find(cedulaaprendiz);
+    }
+    public List<Entrada> findAll() throws Exception
+    {
+        return DAOFactory.getEntradaDAO().findAll();
     }
 }
