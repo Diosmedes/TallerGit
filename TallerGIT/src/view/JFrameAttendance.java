@@ -4,20 +4,58 @@
  * and open the template in the editor.
  */
 package view;
-
+import co.edu.sena.controller.EntradaController;
+import co.edu.sena.controller.InformacionAprendizController;
+import co.edu.sena.model.Entrada;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Usuario
  */
 public class JFrameAttendance extends javax.swing.JFrame {
-
+    private EntradaController entradacontroller;
+    private InformacionAprendizController informacionaprendizcontroller;
+            
     /**
      * Creates new form JFrameAttendance
      */
-    public JFrameAttendance() {
+   public JFrameAttendance() {
         initComponents();
+        entradacontroller= new EntradaController();
+        informacionaprendizcontroller = new InformacionAprendizController();
+        filltable();
+        
+        
+      
+        
     }
-
+ public void filltable(){
+        try {
+            DefaultTableModel tablellegada = new DefaultTableModel();
+              tablellegada.addColumn("numeroaprendiz");
+              tablellegada.addColumn("cedulaaprendiz");
+              tablellegada.addColumn("nombreaprendiz");
+              tablellegada.addColumn("fichadeaprendiz");
+              tablellegada.addColumn("nombredeficha");
+              tablellegada.addColumn("fecha");
+              tablellegada.addColumn("Observacion");
+            List<Entrada> columna = entradacontroller.findAll();
+            String[ ] row =new String [2];
+            for (Entrada string : columna) {
+                
+           
+           row[0]=String.valueOf(string.getFecha());
+           row[1]=String.valueOf(string.getObservacion());
+           tablellegada.addRow(row);
+                
+            }
+            jTable2.setModel(tablellegada);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane,e.getMessage(),"ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
