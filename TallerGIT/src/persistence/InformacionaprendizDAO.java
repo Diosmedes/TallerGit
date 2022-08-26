@@ -5,8 +5,10 @@
  */
 package persistence;
 
+import co.edu.sena.model.Entrada;
 import co.edu.sena.model.Informacionaprendiz;
 import java.util.List;
+import javax.persistence.Query;
 
 /**
  *
@@ -16,23 +18,40 @@ public class InformacionaprendizDAO implements IInformacionaprendizDAO{
 
     @Override
     public void insert(Informacionaprendiz informacionaprendiz) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            EntityManagerHelper.getEntityManager().persist(informacionaprendiz);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
 
     @Override
     public Informacionaprendiz find(Integer cedulaaprendiz) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return EntityManagerHelper.getEntityManager().find(Informacionaprendiz.class,cedulaaprendiz);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
     public List<Informacionaprendiz> findAll() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Query query=EntityManagerHelper.getEntityManager().createNamedQuery("Informacionaprendiz.findAll");
+            return query.getResultList();
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
     public void update(Informacionaprendiz informacionaprendiz) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            EntityManagerHelper.getEntityManager().merge(informacionaprendiz);
+        } catch (Exception e) {
+            throw e;
+        }
     }
     
 }

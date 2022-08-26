@@ -7,6 +7,7 @@ package persistence;
 
 import co.edu.sena.model.Entrada;
 import java.util.List;
+import javax.persistence.Query;
 
 /**
  *
@@ -16,22 +17,39 @@ public class EntradaDAO implements IEntradaDAO {
 
     @Override
     public void insert(Entrada entrada) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            EntityManagerHelper.getEntityManager().persist(entrada);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
-    public Entrada find(Integer entrada) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Entrada find(Integer id) throws Exception {
+       try {
+            return EntityManagerHelper.getEntityManager().find(Entrada.class,id);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
     public List<Entrada> findAll() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            Query query=EntityManagerHelper.getEntityManager().createNamedQuery("Entrada.findAll");
+            return query.getResultList();
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
     public void update(Entrada entrada) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try {
+            EntityManagerHelper.getEntityManager().merge(entrada);
+        } catch (Exception e) {
+            throw e;
+        }
     }
     
 }
