@@ -15,5 +15,6 @@ import java.util.List;
 public interface IInformacionaprendizDAO{
     public void insert(Informacionaprendiz informacionaprendiz) throws Exception;       
     public Informacionaprendiz find(Integer cedulaaprendiz) throws Exception;
+    public void update(Informacionaprendiz informacionaprendiz) throws Exception;
     public List<Informacionaprendiz> findAll() throws Exception;
 }

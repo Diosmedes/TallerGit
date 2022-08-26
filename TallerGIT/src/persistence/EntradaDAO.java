@@ -5,33 +5,32 @@
  */
 package persistence;
 
-import co.edu.sena.model.Informacionaprendiz;
+import co.edu.sena.model.Entrada;
 import java.util.List;
 
 /**
  *
- * @author Aprendiz
+ * @author BRYAN
  */
-public class InformacionaprendizDAO implements IInformacionaprendizDAO{
+public class EntradaDAO implements IEntradaDAO {
 
     @Override
-    public void insert(Informacionaprendiz informacionaprendiz) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-    @Override
-    public Informacionaprendiz find(Integer cedulaaprendiz) throws Exception {
+    public void insert(Entrada entrada) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Informacionaprendiz> findAll() throws Exception {
+    public Entrada find(Integer entrada) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Informacionaprendiz informacionaprendiz) throws Exception {
+    public List<Entrada> findAll() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void update(Entrada entrada) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
