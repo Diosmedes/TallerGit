@@ -63,14 +63,14 @@ public class InformacionAprendizController {
         EntityManagerHelper.commit();
         EntityManagerHelper.closeEntityManager();
     }
-    public Informacionaprendiz find(Integer cedulaaprendiz) throws Exception
+    public Informacionaprendiz find(Integer cedulaAprendiz) throws Exception
     {
-        if(cedulaaprendiz == 0)
+        if(cedulaAprendiz == 0)
         {
             throw new Exception("El número del aprendiz es obligatorio");
         }
           
-        return DAOFactory.getInformacionaprendizDAO().find(cedulaaprendiz);
+        return DAOFactory.getInformacionaprendizDAO().find(cedulaAprendiz);
     }
     public List<Informacionaprendiz> findAll() throws Exception
     {

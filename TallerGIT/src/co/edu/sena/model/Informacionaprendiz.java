@@ -70,7 +70,7 @@ public class Informacionaprendiz implements Serializable {
     }
 
     public Integer getCedulaaprendiz() {
-        return cedulaaprendiz;
+        return this.cedulaaprendiz;
     }
 
     public void setCedulaaprendiz(Integer cedulaaprendiz) {
@@ -78,7 +78,7 @@ public class Informacionaprendiz implements Serializable {
     }
 
     public String getNombreaprendiz() {
-        return nombreaprendiz;
+        return this.nombreaprendiz;
     }
 
     public void setNombreaprendiz(String nombreaprendiz) {
@@ -86,7 +86,7 @@ public class Informacionaprendiz implements Serializable {
     }
 
     public int getFichaaprendiz() {
-        return fichaaprendiz;
+        return this.fichaaprendiz;
     }
 
     public void setFichaaprendiz(int fichaaprendiz) {
@@ -94,7 +94,7 @@ public class Informacionaprendiz implements Serializable {
     }
 
     public String getNombreficha() {
-        return nombreficha;
+        return this.nombreficha;
     }
 
     public void setNombreficha(String nombreficha) {
